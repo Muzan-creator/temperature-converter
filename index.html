@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="khaleed.css">
+</head>
+<body>
+    <center>
+        <div class="box">
+            <h1>Temperature Converter</h1>
+    <h2>units</h2>
+    <input class="input" id="input1" placeholder="degree" type="number"> °C <button onclick="calculateDeg()">convert</button> <br> <br>
+    <input class="input" id="input2" placeholder="kelvin" type="number"> K <button onclick="calculatekev()">convert</button> <br> <br>
+    <input class="input" id="input3" placeholder="fahrenheit" type="number"> °F <button onclick="calculatefar()">convert</button><br> <br>
+
+        </div>
+    </center>
+    <script>
+        let degree = document.getElementById("input1")
+        let kelvin = document.getElementById("input2")
+        let fahrenheit = document.getElementById("input3")
+        function calculateDeg() {
+            console.log(degree.value)
+            if (degree.value !='') {
+                kelvin.value = parseInt(degree.value) + 273
+                fahrenheit.value = parseInt(degree.value) * 9/5 + 32
+            }
+        }
+        function calculatekev(){
+            if (kelvin.value != '') {
+                degree.value = parseInt(kelvin.value) - 273
+                fahrenheit.value = (parseInt(kelvin.value)-273.15) * 9/5 + 32
+            }
+        }
+        function calculatefar(){
+            if (fahrenheit.value !='') {
+                degree.value = (parseInt(fahrenheit.value)-32) * 5/9
+                kelvin.value = (parseInt(fahrenheit.value) -32) * 5/9 + 273.15
+            }
+}
+    </script>
+    
+</body>
+</html>
